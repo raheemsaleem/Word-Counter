@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TextInsight - Text Analysis Dashboard</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css/style.css"/> 
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="logo">
+            <i class="fas fa-chart-pie"></i>
+            <h1>TextInsight</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#" class="active"><i class="fas fa-home"></i> <span>Dashboard</span></a></li>
+            <li><a href="#"><i class="fas fa-file-alt"></i> <span>Text Analysis</span></a></li>
+            <li><a href="#"><i class="fas fa-chart-bar"></i> <span>Reports</span></a></li>
+            <li><a href="#"><i class="fas fa-cog"></i> <span>Settings</span></a></li>
+        </ul>
+    </aside>
+    <main class="main-content">
+        <div class="top-bar">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search...">
+            </div>
+            <div class="user-profile">
+                <div class="notifications">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-count">3</span>
+                </div>
+                <div class="user-info">
+                    <div class="user-avatar">RS</div>
+                    <span>Malik Raheem</span>
+                </div>
+            </div>
+        </div>
+        <div class="dashboard-title">
+            <h2>Text Analysis Dashboard</h2>
+            <p>Analyze your text content and get detailed insights</p>
+        </div>
+        <div class="text-input-card">
+            <div class="text-input-header">
+                <h3>Enter Text to Analyze</h3>
+                <div class="action-buttons">
+                    <button class="btn btn-outline" id="reset-btn">
+                        <i class="fas fa-redo"></i> Reset
+                    </button>
+                    <button class="btn btn-primary" id="analyze-btn">
+                        <i class="fas fa-play"></i> Analyze
+                    </button>
+                </div>
+            </div>
+            <div class="text-area-container">
+                <textarea class="text-input" placeholder="Paste or type your text here..." id="text-input"></textarea>
+            </div>
+            <div class="text-input-footer">
+                <span id="word-count">Words: 0</span>
+                <span id="char-count">Characters: 0</span>
+            </div>
+        </div>
+        <div class="results-grid">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-ruler"></i>
+                    </div>
+                    <h3 class="card-title">Text Metrics</h3>
+                </div>
+                <div class="metric-grid">
+                    <div class="metric">
+                        <div class="metric-value" id="words">0</div>
+                        <div class="metric-label">Words</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value" id="characters">0</div>
+                        <div class="metric-label">Characters</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value" id="sentences">0</div>
+                        <div class="metric-label">Sentences</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value" id="paragraphs">0</div>
+                        <div class="metric-label">Paragraphs</div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3 class="card-title">Readability & Time</h3>
+                </div>
+                <div class="metric-grid">
+                    <div class="metric">
+                        <div class="metric-value" id="readability">0</div>
+                        <div class="metric-label">Reading Level</div>
+                    </div>
+                    <div class "metric">
+                        <div class="metric-value" id="reading-time">0m</div>
+                        <div class="metric-label">Reading Time</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value" id="speaking-time">0m</div>
+                        <div class="metric-label">Speaking Time</div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-key"></i>
+                    </div>
+                    <h3 class="card-title">Keyword Density</h3>
+                </div>
+                <div id="keyword-density">
+                    <p class="text-muted" id="keyword-placeholder">Enter text to analyze keywords</p>
+                    <ul class="keyword-list" id="keyword-list"></ul>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-download"></i>
+                    </div>
+                    <h3 class="card-title">Export Results</h3>
+                </div>
+                <p>Download your analysis results in various formats.</p>
+                <div class="action-buttons" style="margin-top: 1.5rem;">
+                    <button class="btn btn-outline" id="export-json">
+                        <i class="fas fa-file-code"></i> JSON
+                    </button>
+                    <button class="btn btn-outline" id="export-csv">
+                        <i class="fas fa-file-csv"></i> CSV
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="javascript/index.js"></script>
+</body>
+</html>
